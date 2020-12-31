@@ -14,6 +14,7 @@
 // 01.12.2011 include file and extension changed to work with the Arduino 1.0 environment
 // 28.12.2011 changed to channels 1..3 (RGB) for compatibility with the DmxSerialSend sample.
 // 10.05.2012 added some lines to loop to show how to fall back to a default color when no data was received since some time.
+// 31/12/2020 v12345vtm : 2x rgb 6ch reciever https://github.com/v12345vtm/Arduino_DMX_Freestyler
 // - - - - -
 
 #include <DMXSerial.h>
