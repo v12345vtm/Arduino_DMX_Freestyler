@@ -15,7 +15,7 @@
 // 28.12.2011 changed to channels 1..3 (RGB) for compatibility with the DmxSerialSend sample.
 // 10.05.2012 added some lines to loop to show how to fall back to a default color when no data was received since some time.
 // 29/12/2020 v12345vtm : 2x rgb 6ch reciever https://github.com/v12345vtm/Arduino_DMX_Freestyler/tree/main/DmxRGBreciever
-// 30/12/2020 v12345vtm : 2x rgb 8ch reciever + 2virtual dimmer https://github.com/v12345vtm/Arduino_DMX_Freestyler/tree/main/DmxRGBreciever
+// 30/12/2020 v12345vtm : 2x rgb 8ch reciever + 2virtual dimmer https://github.com/v12345vtm/Arduino_DMX_Freestyler/tree/main/DmxRGBreciever-8ch
 //
 // - - - - -
 
