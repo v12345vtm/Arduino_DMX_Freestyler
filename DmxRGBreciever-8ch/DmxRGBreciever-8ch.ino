@@ -34,7 +34,7 @@ const int Greenled =  5;  // PWM output pin for Green Light.
 const int Blueled =   3;  // PWM output pin for Blue Light.
 
 byte virtualDimmerA = 255 ; //255 is full power
-byte virtualDimmerB = 255 ; 
+byte virtualDimmerB = 255 ;
 
 #define RedDefaultLevel   255 //red toont blauw
 #define GreenDefaultLevel 0
@@ -87,11 +87,11 @@ void setup () {
 
 
 
-//  DMXSerial.write(1, 255);
-//  DMXSerial.write(2, 0);
-//  DMXSerial.write(3, 0);
-//  delay(500);
- 
+  //  DMXSerial.write(1, 255);
+  //  DMXSerial.write(2, 0);
+  //  DMXSerial.write(3, 0);
+  //  delay(500);
+
 }
 
 
@@ -102,23 +102,23 @@ void loop() {
   if (lastPacket < 1500) {
 
 
-             
-  virtualDimmerA = map(DMXSerial.read(DMXchannel + 6) , 0, 255, 255, 0); //convrt 255 to 0 and 0 to 255
+
+    virtualDimmerA = map(DMXSerial.read(DMXchannel + 3) , 0, 255, 255, 0); //convrt 255 to 0 and 0 to 255
     virtualDimmerB = map(DMXSerial.read(DMXchannel + 7) , 0, 255, 255, 0); //convrt 255 to 0 and 0 to 255
-  
+
     // read recent DMX values and set pwm levels
-    analogWrite(RedPin,   map(virtualDimmerA , 0, 255,   DMXSerial.read(DMXchannel + 0 ) ,0 )); //channel 4 5 6 address of dmx universe
-    analogWrite(GreenPin,  map(virtualDimmerA , 0, 255,   DMXSerial.read(DMXchannel + 1 ) ,0 ));
- analogWrite(BluePin,  map(virtualDimmerA , 0, 255,   DMXSerial.read(DMXchannel + 2 ) ,0 ));
+    analogWrite(RedPin,   map(virtualDimmerA , 0, 255,   DMXSerial.read(DMXchannel + 0 ) , 0 )); //channel 4 5 6 address of dmx universe
+    analogWrite(GreenPin,  map(virtualDimmerA , 0, 255,   DMXSerial.read(DMXchannel + 1 ) , 0 ));
+    analogWrite(BluePin,  map(virtualDimmerA , 0, 255,   DMXSerial.read(DMXchannel + 2 ) , 0 ));
 
-    analogWrite(Redled,   map(virtualDimmerB , 0, 255,  DMXSerial.read(DMXchannel + 3 ) ,0 ));
-    analogWrite(Greenled,   map(virtualDimmerB , 0, 255,   DMXSerial.read(DMXchannel + 4 ) ,0 ));
-    analogWrite(Blueled,   map(virtualDimmerB , 0, 255,   DMXSerial.read(DMXchannel + 5 ) ,0 ));
+    analogWrite(Redled,   map(virtualDimmerB , 0, 255,  DMXSerial.read(DMXchannel + 4 ) , 0 ));
+    analogWrite(Greenled,   map(virtualDimmerB , 0, 255,   DMXSerial.read(DMXchannel + 5 ) , 0 ));
+    analogWrite(Blueled,   map(virtualDimmerB , 0, 255,   DMXSerial.read(DMXchannel + 6 ) , 0 ));
 
- 
-  
-  
-        
+
+
+
+
 
   } else {
     // Show pure red color, when no data was received since 5 seconds or more.
